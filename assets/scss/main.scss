@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$primary-color: #5E3AEE;
+$secondary-color: #F9F9FC;
+$text-color: #0F1221;
+$menu-color: #6B7092;
+
+* {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+html {
+    scroll-behavior: smooth !important; 
+}
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+// Utility
+.btn {
+    border-radius: 0 !important;
+}
+
+// Navbar
+.container-fluid#navbar-fixed {
+    transition: top .5s;
+    .navbar {
+        transition: .5s ease-in-out;
+        .navbar-toggler-icon {
+            color: $primary-color;
+        }
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    color: $menu-color;
+                    transition: .5s ease;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+
+                &.active {
+                    a {
+                        color: $primary-color !important;
+                        font-weight: bold !important;
+                        position: relative;
+                    }
+                }
+            }
+        }
+
+        .social-media-container {
+            .social-link {
+                width: 42px;
+                height: 42px;
+                padding: 12px;
+                margin-right: 8px;
+                margin-left: 8px;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 200ms ease;
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        position: sticky;
+        top: 0;
+    }
+}
+
+// Jumbotron
+.container.box {
+    background-color: $secondary-color !important;
+    padding-left: 5em;
+    padding-right: 5em;
+    .title {
+        color: $text-color;
+        font-size: 3rem;
+        font-weight: bold;
+        word-spacing: 10px;
+        line-height: 1;
+    }
+    .profession {
+        color: $primary-color;
+    }
+    p {
+        color: $menu-color;
+    }
+    .btn.btn-primary {
+        background-color: $primary-color !important;
+        border: 1px solid $primary-color !important;
+        padding: .5em 2em !important;
+        transform: .5s all ease !important;
+        margin-top: 5em;
+
+        &:hover {
+            background-color: $secondary-color !important;
+            border: 1px solid $primary-color !important;
+            color: $primary-color !important;
+        }
+    }
+    .btn.btn-secondary {
+        background-color: $text-color !important;
+        border: 1px solid $text-color !important;
+        padding: .5em 2em !important;
+        margin-top: 5em;
+        margin-left: 1em;
+
+        &:hover {
+            background-color: $secondary-color !important;
+            border: 1px solid $text-color !important;
+            color: $text-color !important;
+        }
+    }
+
+    img {
+        width: 21em;
+
+        @media screen and (max-width: 768px) {
+            width: 10em !important;
+            -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+        }
+        @media screen and (max-width: 576px) {
+            margin-top: -4em !important;
+            -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from (rgba(0,0,0,1)) to(rgba(0,0,0,0)));
+        }
+        @media screen and (max-width: 360px) {
+            margin-top: -3em !important;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        .title {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        .title {
+            font-size: 1.5rem !important;
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+
+        .profession {
+            font-size: 1.3rem !important;
+        }
+
+        p {
+            font-size: .8rem !important;
+        }
+
+        .btn.btn-primary {
+            margin-top: 10px;
+        }
+
+        .btn.btn-secondary {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+// About
+.container-fluid.about-me {
+    margin: 8em auto 8em auto !important;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    background-color: $text-color;
+    color: white;
+
+    h6 {
+        color: $primary-color;
+        opacity: 1;
+    }
+
+    p { 
+        opacity: .5 ;
+        line-height: 1.7;
+    }
+
+}
+
+// Works
+.container.works {
+    h1 {
+        font-weight: 700;
+    }
+    h6 {
+        color: $text-color;
+    }
+
+    .card {
+        border-radius: 0;
+    }
+
+    .img-hover-zoom {
+        overflow: hidden;
+        img {   
+            transition: transform .6s cubic-bezier(.4, .64, .68, 1);
+        }
+        &:hover {
+            img {
+                transform: scale(1.035);
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 2rem;
+        }
+        h4, p {
+            font-size: 1em;
+        }
+        p {
+            text-align: left !important;
+        }
+    }
+}
+
+// Contact
+.container.contact {
+    background-color: $text-color;
+    color: white;
+    margin: 5em auto auto auto;
+
+    .container {
+        padding-top: 5em;
+        padding-bottom: 5em;
+        transition: .5s all ease-in-out;
+
+        h6 {
+            opacity: .5;
+            font-weight: 300;
+        }
+
+        p {
+            opacity: .5;
+            font-weight: 300;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            transition: opacity .5s ease;
+
+            h5:hover {
+                opacity: .5;
+            }
+        }
+
+        img:hover {
+            opacity: 0.7;
+        }
+        .footer-line-break {
+            height: 1px;
+            // width: 810px;
+            background-color: #1e2238;
+            margin: 62px auto 62px auto;
+        }
+
+        .social-media-container {
+            .social-link {
+                width: 42px;
+                height: 42px;
+                padding: 12px;
+                margin-right: 8px;
+                margin-left: 8px;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 200ms ease;
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: hsla(0, 0%, 100%, 0.08);
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        margin-top: 5em;
+    }
+}
+
+// Scroll Button To Top
+#btnTop {
+    bottom: 0;
+    right: 0;
+    border: none;
+    opacity: 0;
+    background-color: $primary-color;
+    transition: .3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// Preloader
+.loader-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    background: #fff;
+    width: 100%;
+    height: 100vh;
+  }
+  .loader-p{
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+  }
+  
+  .loader-p:before, .loader-p:after{
+    content: '';
+    border: 1em solid $primary-color;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+  }
+  
+  .loader-p:before{
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes loader{
+    0%{
+      transform: scale(0);
+      opacity: 0;
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
